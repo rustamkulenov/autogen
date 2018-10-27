@@ -1,1 +1,1 @@
-# rabbit-autogen
+# autogen
