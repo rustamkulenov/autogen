@@ -12,7 +12,7 @@ curl -s "https://raw.githubusercontent.com/rustamkulenov/autogen/master/install.
 or:
 ```
 $ pip install Jinja2
-$ https://raw.githubusercontent.com/rustamkulenov/autogen/master/autogen.py
+$ wget https://raw.githubusercontent.com/rustamkulenov/autogen/master/autogen.py
 ```
 
 ## File formats and structure
