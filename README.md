@@ -1,5 +1,7 @@
 # autogen. Template processing script
 
+Autogen gets template file + json file with values and produces one or multuple files from single template. Can be used to generate lot of code instead of writing manually.
+
 ## Prerequisites:
 * python installed
 
