@@ -12,9 +12,12 @@ templatePath = sys.path[0]
 env = Environment(loader=FileSystemLoader(templatePath))
 template = env.get_template(templateIdentity)
 
-# Read all contexts from the file
-with open(templateIdentity+".json") as json_file:
-    ctxList = json.load(json_file)
+try:
+    # Read all contexts from the file
+    with open(templateIdentity+".json") as json_file:
+        ctxList = json.load(json_file)
+except IOError:
+    sys.exit(0)
 
 try:
 
