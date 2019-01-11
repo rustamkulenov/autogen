@@ -3,6 +3,7 @@
 
 import sys
 import ntpath
+import os
 from jinja2 import Template, Environment, FileSystemLoader, UndefinedError
 import json
 
@@ -10,7 +11,7 @@ templateIdentity = sys.argv[1]
 templatePath = sys.path[0]
 
 env = Environment(loader=FileSystemLoader(templatePath))
-template = env.get_template(templateIdentity)
+template = env.get_template(ntpath.basename(templateIdentity))
 
 try:
     # Read all contexts from the file
@@ -23,8 +24,7 @@ try:
 
     # For each context render templates
     for ctx in ctxList:
-        outputFilename = ntpath.dirname(
-            templateIdentity) + "/" + ctx["fileName"]
+        outputFilename = os.path.join( ntpath.dirname(templateIdentity), ctx["fileName"] )
         print("{template} + {template}.json => {output}".format(
             template=templateIdentity, output=outputFilename))
 
