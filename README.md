@@ -193,3 +193,8 @@ Automatic C# files generation can be performed during project build. Just add `<
 ```
 
 `<ItemGroup>` will include all *.j2 files into build process, and `<Target>` will call autogen.py for each template file.
+
+## Integration with docker
+
+See [/examples/messaging/](/examples/messaging/) subfolder
+
