@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import sys
@@ -33,10 +33,10 @@ try:
             file.write(res)
 
 except KeyError as e:
-    print "Required key '{key}' is not defined in this context:\r\n {ctx}".format(
-        key=e.message, ctx=ctx)
+    print ("Required key '{key}' is not defined in this context:\r\n {ctx}".format(
+        key=e.message, ctx=ctx))
     sys.exit(1)
 except UndefinedError as e:
-    print "Key {key}, but used in template. Context:\r\n {ctx}".format(
-        key=e.message, ctx=ctx)
+    print ("Key {key}, but used in template. Context:\r\n {ctx}".format(
+        key=e.message, ctx=ctx))
     sys.exit(2)

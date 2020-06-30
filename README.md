@@ -3,7 +3,8 @@
 Autogen gets template file + json file with values and produces one or multuple files from single template. Can be used to generate lot of code instead of writing manually.
 
 ## Prerequisites:
-* python installed
+* python3 installed
+* pip3 installed
 
 ## How to install
 
@@ -13,7 +14,7 @@ curl -s "https://raw.githubusercontent.com/rustamkulenov/autogen/master/install.
 ```
 or:
 ```Shell
-pip install Jinja2
+pip3 install Jinja2
 wget https://raw.githubusercontent.com/rustamkulenov/autogen/master/autogen.py
 ```
 
