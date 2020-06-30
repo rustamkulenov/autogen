@@ -1,0 +1,28 @@
+#region {{ name }}Producer
+
+/// <summary>
+/// Interface for {{ name }}Producer
+/// </summary>
+public interface I{{ name }}Producer : IExchangeProducer
+{
+{% for msg in msgs %}
+    /// <summary>
+    /// {{ msg.comment }}
+    /// </summary>
+    {%- if msg.isRPC %}
+    {{ msg.RPCResultType }} {{ msg.name }}({{ msg.name }}Msg msg);
+    {% else %}
+    void Raise{{ msg.name }}({{ msg.name }}Message message, string routing);
+    {% endif -%}
+{% endfor %}        
+}
+
+public class {{ name }}ProducerSettings : MQPublisherSettings
+{
+    public {{ name }}ProducerSettings()
+    {
+        Exchange = "{{ name }}";
+    }
+}
+
+#endregion // {{ name }}Producer

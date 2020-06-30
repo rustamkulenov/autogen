@@ -1,0 +1,26 @@
+#region {{ name }}Consumer
+
+/// <summary>
+/// Interface for {{ name }}Listener
+/// </summary>
+public interface I{{ name }}Consumer : IExchangeConsumer
+{
+{% for msg in msgs %}
+    {%- if msg.isRPC %}
+    Func<{{ msg.name }}Message, {{ msg.RPCResultType }}> {{ msg.name }} { get; set; }
+    {% else %}
+    event AsyncEventHandler<{{ msg.name }}Message> On{{ msg.name }};
+    {% endif -%}
+{% endfor %}    
+}
+
+public partial class {{ name }}ConsumerSettings : MQListenerSettings
+{
+    public {{ name }}ConsumerSettings()
+    {
+        Exchange = "{{ name }}";
+    }
+}
+
+
+#endregion // {{ name }}Consumer 

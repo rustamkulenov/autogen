@@ -1,0 +1,17 @@
+{% include "head.j2" %}
+
+namespace {{ namespace }} {
+
+#region Messages
+{% include "messages.j2" %}
+#endregion
+
+#region Consumers
+{% include "consumer.j2" %}
+#endregion
+
+#region Producers
+{% include "producer.j2" %}
+#endregion
+
+} // namespace

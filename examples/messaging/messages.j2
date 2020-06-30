@@ -1,0 +1,8 @@
+{% for msg in msgs %}
+/// {{ msg.comment }}
+public class {{ msg.name }}Message : EventArgs
+{ {% for param in msg.params %}
+    /// {{ param.comment }}
+    public {{ param.type }} {{ param.name}} { get; set; }
+{% endfor %}}
+{% endfor %}

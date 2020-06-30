@@ -1,0 +1,157 @@
+[
+  {
+    "fileName": "Generated/AccountMessaging.cs",
+    "name": "AccountExchange",
+    "namespace": "Messaging.Account.Generated",
+    "msgs": [
+      {
+        "name": "CreateAccountCommand",
+        "comment": "A command to create a new account.",
+        "params": [
+          {
+            "name": "PlatformUId",
+            "type": "Guid"
+          },
+          {
+            "name": "AccountUId",
+            "type": "Guid"
+          },
+          {
+            "name": "IsDemo",
+            "type": "bool"
+          },
+          {
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "name": "Email",
+            "type": "string"
+          },
+          {
+            "name": "City",
+            "type": "string"
+          },
+          {
+            "name": "State",
+            "type": "string"
+          },
+          {
+            "name": "Country",
+            "type": "string"
+          },
+          {
+            "name": "ZipCode",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "AccountCreatedEvent",
+        "comment": "An event to notify consumers an account created.",
+        "params": [
+          {
+            "name": "AccountUId",
+            "type": "Guid"
+          },
+          {
+            "name": "PlatformUId",
+            "type": "Guid"
+          },
+          {
+            "name": "PlatformInstanceUId",
+            "type": "Guid"
+          }
+        ]
+      },
+      {
+        "name": "AccountBalanceChangedEvent",
+        "comment": "An event to notify consumers that account balance changed.",
+        "params": [
+          {
+            "name": "AccountUId",
+            "type": "Guid"
+          },
+          {
+            "name": "PlatformUId",
+            "type": "Guid"
+          },
+          {
+            "name": "PlatformInstanceUId",
+            "type": "Guid"
+          },
+          {
+            "name": "Amount",
+            "type": "double"
+          },
+          {
+            "name": "Currency",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "fileName": "Generated/ExecutionMessaging.cs",
+    "name": "ExecutionExchange",
+    "namespace": "Messaging.Execution.Generated",
+    "msgs": [
+      {
+        "name": "PlaceOrderCommand",
+        "comment": "A command to place new order to a trading platform.",
+        "params": [
+          {
+            "name": "AccountUId",
+            "type": "Guid"
+          },
+          {
+            "name": "Operation",
+            "type": "OrderOperations"
+          },
+          {
+            "name": "Symbol",
+            "type": "string"
+          },
+          {
+            "name": "Volume",
+            "type": "double"
+          },
+          {
+            "name": "Price",
+            "type": "double"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "fileName": "Generated/NotificationMessaging.cs",
+    "name": "NotificationExchange",
+    "namespace": "Messaging.Notification.Generated",
+    "msgs": [
+      {
+        "name": "SendEmailCommand",
+        "comment": "A command to send an email.",
+        "params": [
+          {
+            "name": "UId",
+            "type": "Guid"
+          },
+          {
+            "name": "SendTo",
+            "type": "string[]"
+          },
+          {
+            "name": "TemplateName",
+            "type": "string"
+          },
+          {
+            "name": "Parameters",
+            "type": "object"
+          }
+        ]
+      }
+    ]
+  }
+]
