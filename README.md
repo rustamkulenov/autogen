@@ -18,6 +18,10 @@ pip3 install Jinja2
 wget https://raw.githubusercontent.com/rustamkulenov/autogen/master/autogen.py
 ```
 
+## Examples
+1. [Generate C# code for messages, producer and consumer](/examples/messaging/)
+2. [Generate Rust code by json file describing NMEA protocol specification](https://github.com/rustamkulenov/nmea-tools/tree/main/src)
+
 ## File formats and structure
 Template file is a [jinja2 template](http://jinja.pocoo.org/docs/dev/templates/) file format. The following template will generate C# code for 'command' and interfaces for 'Listener' and 'Publisher':
 ```Django
